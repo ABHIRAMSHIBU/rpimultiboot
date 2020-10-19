@@ -71,7 +71,7 @@ int  main(int argc, char ** args){
             printf("Syncing disk...\n");
             sync();
             printf("Rebooting...\n");
-            syscall(SYS_reboot, LINUX_REBOOT_MAGIC1, LINUX_REBOOT_MAGIC2, LINUX_REBOOT_CMD_RESTART2, "8");
+            syscall(SYS_reboot, LINUX_REBOOT_MAGIC1, LINUX_REBOOT_MAGIC2, LINUX_REBOOT_CMD_RESTART2, partition);
         }
         else{
             printf("Invalid partition number!\n");
