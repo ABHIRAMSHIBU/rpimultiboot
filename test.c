@@ -68,13 +68,13 @@ int  main(int argc, char ** args){
         printf("Partition detected as %s\n",partition);
         //printf("Partition test status: %d\n",partitionOK(partition));
         if(partitionOK(partition)){
-            print("Syncing disk...\n");
+            printf("Syncing disk...\n");
             sync();
-            print("Rebooting...\n");
+            printf("Rebooting...\n");
             syscall(SYS_reboot, LINUX_REBOOT_MAGIC1, LINUX_REBOOT_MAGIC2, LINUX_REBOOT_CMD_RESTART2, "8");
         }
         else{
-            print("Invalid partition number!\n");
+            printf("Invalid partition number!\n");
         }
     }
 	//syscall(SYS_reboot, LINUX_REBOOT_MAGIC1, LINUX_REBOOT_MAGIC2, LINUX_REBOOT_CMD_RESTART2, "8");
